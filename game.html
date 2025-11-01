@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ミニゲーム - ヘルプマークポートフォリオ</title>
+    <link rel="stylesheet" href="game.css" />
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="kuma.png" sizes="192x192" />
+    <link rel="icon" href="kuma.png" sizes="96x96" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="kuma.png" sizes="180x180" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- デスクトップメニュー -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="pro.html">プロフィール</a></li>
+          <li><a href="gyara.html">ギャラリー</a></li>
+          <li><a href="otoi.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- モバイルメニュー（ハンバーガー） -->
+      <div class="hamburger-menu">
+        <div class="menu-icon">
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="icon-decoration"></span>
+          <span class="icon-decoration"></span>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="pro.html">プロフィール</a></li>
+            <li><a href="gyara.html">ギャラリー</a></li>
+            <li><a href="otoi.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="circle"></div>
+    </div>
+
+    <!-- 個人開発作品リンク -->
+    <div class="project-links-container">
+      <h2 class="project-links-title">ミニゲーム</h2>
+
+      <div class="project-links">
+      
+
+        <a
+          href="https://helpmark-pink.github.io/helpmarkgame3/
+                "
+          class="project-button"
+        >
+          <span class="project-icon"><i class="fas fa-code"></i></span>
+          <span class="project-name">フルフル</span>
+        </a>
+        
+
+       
+        <a
+          href="https://helpmark-pink.github.io/mario-pakuri/"
+          class="project-button"
+        >
+          <span class="project-icon"><i class="fas fa-code"></i></span>
+          <span class="project-name">スーパーマリオ風ゲーム</span>
+        </a>
+
+       
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".menu-icon")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

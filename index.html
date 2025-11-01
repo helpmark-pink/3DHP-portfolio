@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ASD(自閉症スペクトラム)のyukariが制作した3DCG技術を使ったWebサイトです。個人開発作品やプロフィール、ギャラリー、お問い合わせ情報を掲載しています。"
+    />
+    <title>ヘルプマークポートフォリオ</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="kuma.png" sizes="192x192" />
+    <link rel="icon" href="kuma.png" sizes="96x96" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="kuma.png" sizes="180x180" />
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="main.js"></script>
+
+    <div class="container">
+      <!-- デスクトップメニュー -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="pro.html">プロフィール</a></li>
+          <li><a href="gyara.html">ギャラリー</a></li>
+          <li><a href="otoi.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- モバイルメニュー（ハンバーガー） -->
+      <div class="hamburger-menu">
+        <div class="menu-icon">
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="icon-decoration"></span>
+          <span class="icon-decoration"></span>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="pro.html">プロフィール</a></li>
+            <li><a href="gyara.html">ギャラリー</a></li>
+            <li><a href="otoi.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="circle"></div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".menu-icon")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

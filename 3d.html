@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D作品 - ヘルプマークポートフォリオ</title>
+    <link rel="stylesheet" href="3d.css">
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="kuma.png" sizes="192x192">
+    <link rel="icon" href="kuma.png" sizes="96x96">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="kuma.png" sizes="180x180">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <!-- デスクトップメニュー -->
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="pro.html">プロフィール</a></li>
+                <li><a href="gyara.html">ギャラリー</a></li>
+                <li><a href="otoi.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        
+        <!-- モバイルメニュー（ハンバーガー） -->
+        <div class="hamburger-menu">
+            <div class="menu-icon">
+                <span class="menu-icon-part"></span>
+                <span class="menu-icon-part"></span>
+                <span class="menu-icon-part"></span>
+                <span class="icon-decoration"></span>
+                <span class="icon-decoration"></span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="pro.html">プロフィール</a></li>
+                    <li><a href="gyara.html">ギャラリー</a></li>
+                    <li><a href="otoi.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <div class="slide"><img src="FE908B13-ED56-412A-9B31-6EDEDE90083D_1_105_c.jpeg" alt="Slide 1"></div>
+            <div class="slide"><img src="45762001-2F2B-489B-8CF5-AB6880805CC7_1_105_c.jpeg" alt="Slide 2"></div>
+            <div class="slide"><img src="A4BD0CC9-A087-4126-9447-42A4A4F37CE5_1_105_c.jpeg" alt="Slide 3"></div>
+            <div class="slide"><img src="C800B0ED-DB7A-40AB-91A4-83693BF0776D_1_105_c.jpeg" alt="Slide 4"></div>
+            <div class="slide"><img src="FE908B13-ED56-412A-9B31-6EDEDE90083D_1_105_c.jpeg" alt="Slide 5"></div>
+        </div>
+        <button class="slideshow-control prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slideshow-control next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const slideshow = document.querySelector('.slideshow');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let currentSlideIndex = 0;
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            updateSlideshow();
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            updateSlideshow();
+        });
+
+        function updateSlideshow() {
+            slideshow.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        }
+    </script>
+
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

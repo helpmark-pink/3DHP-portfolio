@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webアプリケーション - ヘルプマークポートフォリオ</title>
+    <link rel="stylesheet" href="web.css" />
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="kuma.png" sizes="192x192" />
+    <link rel="icon" href="kuma.png" sizes="96x96" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="kuma.png" sizes="180x180" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- デスクトップメニュー -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="pro.html">プロフィール</a></li>
+          <li><a href="gyara.html">ギャラリー</a></li>
+          <li><a href="otoi.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- モバイルメニュー（ハンバーガー） -->
+      <div class="hamburger-menu">
+        <div class="menu-icon">
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="icon-decoration"></span>
+          <span class="icon-decoration"></span>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="pro.html">プロフィール</a></li>
+            <li><a href="gyara.html">ギャラリー</a></li>
+            <li><a href="otoi.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="circle"></div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".menu-icon")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+
+    <!-- 個人開発作品リンク -->
+    <div class="project-links-container">
+      <h2 class="project-links-title">Webアプリケーション</h2>
+
+      <div class="project-links">
+        <!-- <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-paint-brush"></i></span>
+                <span class="project-name">イラスト作品集</span>
+            </a>
+            
+            <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-gamepad"></i></span>
+                <span class="project-name">Unityゲーム</span>
+            </a> -->
+
+        <a
+          href="https://helpmark-pink.github.io/pokeAPI
+            "
+          class="project-button"
+        >
+          <span class="project-icon"></span>
+          <span class="project-name">ポケモン図鑑アプリ</span>
+        </a>
+        <!-- <a href="https://oyaji-gag-freezer.vercel.app/
+            " class="project-button">
+                <span class="project-icon"></span>
+                <span class="project-name">オヤジギャグ冷凍庫
+                </span>
+            </a> -->
+        <a
+          href="https://japanese-meigen.vercel.app/
+            "
+          class="project-button"
+        >
+          <span class="project-icon"></span>
+          <span class="project-name">和風名言ジェネレーター</span>
+        </a>
+
+        <!-- <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-mobile-alt"></i></span>
+                <span class="project-name">モバイルアプリ</span>
+            </a>
+        </div>
+        
+        <div class="project-links">
+            <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-cube"></i></span>
+                <span class="project-name">3Dモデル</span>
+            </a>
+            
+            <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-film"></i></span>
+                <span class="project-name">アニメーション</span>
+            </a>
+            
+            <a href="#" class="project-button">
+                <span class="project-icon"><i class="fas fa-robot"></i></span>
+                <span class="project-name">AIプロジェクト</span>
+            </a> -->
+      </div>
+    </div>
+  </body>
+</html>

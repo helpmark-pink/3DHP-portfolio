@@ -1,0 +1,576 @@
+/* body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2980 0%, #7cfc00 100%);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    color: #ffffff;
+    background-color: #1a2980;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2980 0%, #7cfc00 100%);
+    z-index: -1;
+    pointer-events: none;
+} */
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #7cfc00 0%, #1a2980 100%);
+    background-size: cover; 
+    background-position: center;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* 背景が表示されない場合のフォールバック */
+    background-color: #1a2980;
+}
+
+/* 背景のフォールバック用の要素を追加 */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #7cfc00 0%, #1a2980 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* デスクトップメニュースタイル */
+.desktop-menu {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 41, 128, 0.9);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid #26d0ce;
+}
+
+.desktop-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.desktop-menu li {
+    margin: 0 20px;
+}
+
+.desktop-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.desktop-menu a:hover {
+    color: #26d0ce;
+}
+
+.desktop-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #26d0ce;
+    transition: width 0.3s ease;
+}
+
+.desktop-menu a:hover::after {
+    width: 100%;
+}
+
+/* ハンバーガーメニュースタイル */
+.hamburger-menu {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    display: none; /* デフォルトでは非表示 */
+}
+
+/* メニューアイコン */
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #0518f1;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #f4f4f4;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: pulse 2s infinite;
+}
+
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(38, 208, 206, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(38, 208, 206, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(38, 208, 206, 0);
+    }
+}
+
+.menu-icon:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #26d0ce 0%, transparent 70%);
+    opacity: 0.3;
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* メニューアイコンの各部分 */
+.menu-icon-part {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* アイコン装飾 */
+.icon-decoration {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9ee8e7;
+    box-shadow: 0 0 5px rgba(158, 232, 231, 0.8);
+}
+
+.icon-decoration:nth-child(4) {
+    top: 8px;
+    right: 10px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icon-decoration:nth-child(5) {
+    bottom: 8px;
+    left: 10px;
+    animation: float 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.2);
+    }
+}
+
+/* アイコンがアクティブ時のアニメーション */
+.menu-icon.active .menu-icon-part:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: #26d0ce;
+}
+
+.menu-icon.active .menu-icon-part:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active .menu-icon-part:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: #26d0ce;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    background-color: rgba(5, 34, 255, 0.73);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border: 2px solid #ffff2f;
+}
+
+.nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: bounceIn 0.5s;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+    }
+    50% {
+        transform: translateY(10px) scale(1.05);
+    }
+    80% {
+        transform: translateY(-5px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background-color: rgba(229, 244, 66, 0.648);
+}
+
+.nav-menu a:hover {
+    background-color: #26d0ce;
+    color: #1a2980;
+    transform: scale(1.05);
+}
+
+/* レスポンシブ対応 - モバイル表示 */
+@media screen and (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* モバイルでは非表示 */
+    }
+    
+    .hamburger-menu {
+        display: block; /* モバイルでは表示 */
+    }
+
+    .profile-content {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .profile-image {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .profile-content {
+        flex-direction: column;
+        padding: 15px;
+        margin-top: 80px;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+    }
+    
+    .profile-details {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    .profile-title {
+        font-size: 1rem;
+    }
+    
+    .profile-bio {
+        font-size: 0.9rem;
+    }
+    
+    .skills-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .skill-item {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+    
+    .desktop-menu {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* プロフィールコンテンツ */
+.profile-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 120px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.profile-image {
+    flex: 0 0 40%;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border: 3px solid #26d0ce;
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.03);
+    border-color: #ffffff;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(38, 208, 206, 0.3);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.profile-details {
+    flex: 0 0 55%;
+    padding: 20px;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.profile-name::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #26d0ce, transparent);
+    border-radius: 2px;
+}
+
+.profile-title {
+    font-size: 1.2rem;
+    color: #9ee8e7;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.profile-bio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.profile-info {
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(38, 208, 206, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: #26d0ce;
+    font-size: 1.2rem;
+}
+
+.info-text {
+    font-size: 1rem;
+}
+
+.profile-skills {
+    margin-top: 30px;
+}
+
+.skills-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #9ee8e7;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: rgba(38, 208, 206, 0.2);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    border: 1px solid rgba(38, 208, 206, 0.5);
+    transition: all 0.3s ease;
+}
+
+.skill-item i {
+    margin-right: 5px;
+    color: #9ee8e7;
+}
+
+.skill-item:hover {
+    background-color: #26d0ce;
+    color: #1a2980;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(38, 208, 206, 0.3);
+}
+
+.skill-item:hover i {
+    color: #1a2980;
+}
+
+/* 浮遊する装飾要素 */
+.floating-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: float-bubble 15s linear infinite;
+    box-shadow: 0 0 10px rgba(38, 208, 206, 0.3);
+    border: 1px solid rgba(38, 208, 206, 0.3);
+}
+
+.bubble:nth-child(odd) {
+    background-color: rgba(38, 208, 206, 0.1);
+}
+
+.bubble:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bubble:nth-child(3n) {
+    background: radial-gradient(circle at center, rgba(38, 208, 206, 0.2) 0%, rgba(26, 41, 128, 0.2) 100%);
+}
+
+@keyframes float-bubble {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(80vh) translateX(-20px) scale(0.6);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(50vh) translateX(20px) scale(1);
+        opacity: 0.8;
+    }
+    80% {
+        transform: translateY(20vh) translateX(-10px) scale(0.8);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-20vh) translateX(0) scale(0.2);
+        opacity: 0;
+    }
+}
+

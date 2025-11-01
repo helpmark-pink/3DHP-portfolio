@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品ギャラリー - ヘルプマークポートフォリオ</title>
+    <link rel="stylesheet" href="gyara.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- ファビコンの設定 -->
+    <link rel="icon" href="kuma.png" sizes="192x192" />
+    <link rel="icon" href="kuma.png" sizes="96x96" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="kuma.png" sizes="180x180" />
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <div class="container">
+      <!-- デスクトップメニュー -->
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="pro.html">プロフィール</a></li>
+          <li><a href="gyara.html">ギャラリー</a></li>
+          <li><a href="otoi.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- モバイルメニュー（ハンバーガー） -->
+      <div class="hamburger-menu">
+        <div class="menu-icon">
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="menu-icon-part"></span>
+          <span class="icon-decoration"></span>
+          <span class="icon-decoration"></span>
+        </div>
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="pro.html">プロフィール</a></li>
+            <li><a href="gyara.html">ギャラリー</a></li>
+            <li><a href="otoi.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- ギャラリーコンテンツ -->
+      <div class="gallery-content">
+        <div class="gallery-title">
+          <h1>
+            <i
+              class="fas fa-images"
+              style="color: #26d0ce; margin-right: 10px"
+            ></i
+            >作品ギャラリー
+          </h1>
+          <p>
+            私の個人開発作品のコレクションです。クリックして詳細をご覧ください。
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- ギャラリーアイテム1：3Dモデリング -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=3D+Modeling"
+              alt="3DCG作品"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h2 class="gallery-item-title">
+                <i
+                  class="fas fa-cube"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i
+                >3Dモデリング作品
+              </h2>
+              <p class="gallery-item-description">
+                Blenderで制作した3Dキャラクターモデルやアニメーション作品を公開しています。モデリング、テクスチャ、アニメーションまで一貫して手掛けた3DCG例です。
+              </p>
+              <a href="3d.html" class="gallery-item-link"
+                >作品一覧を見る <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム2：Webアプリケーション -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=Web+App"
+              alt="Webアプリケーション作品"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h2 class="gallery-item-title">
+                <i
+                  class="fas fa-code"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i
+                >Webアプリケーション
+              </h2>
+              <p class="gallery-item-description">
+                React、TypeScript、Next.jsなどの最新Web技術を活用し、直感的で操作しやすいUI/UXにこだわったアプリケーションを制作しています。
+              </p>
+              <a href="web.html" class="gallery-item-link">
+                作品一覧を見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム3：Unityゲーム -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=Unity+Game"
+              alt="Unityゲーム作品"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h3 class="gallery-item-title">
+                <i
+                  class="fas fa-gamepad"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i>
+                Unityゲーム
+              </h3>
+              <p class="gallery-item-description">
+                UnityとC#を使い、2D・3DのインタラクティブなゲームやWeb上で遊べる将棋・マージパズル作品を制作しています。企画からデザイン・実装・公開までを一貫して担当しました。
+              </p>
+              <a href="unity.html" class="gallery-item-link">
+                作品一覧を見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム4：AIプロジェクト -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=AI+Project"
+              alt="AIプロジェクト"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h2 class="gallery-item-title">
+                <i
+                  class="fas fa-robot"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i>
+                AIプロジェクト
+              </h2>
+              <p class="gallery-item-description">
+                Python・機械学習・深層学習(Deep
+                Learning)を活用して開発したAIシステム群です。画像認識や自然言語処理等、技術的チャレンジに取り組み、実用的なソリューションに仕上げました。
+              </p>
+              <a href="ai.html" class="gallery-item-link">
+                作品一覧を見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム5ミニゲーム -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=Mini+Game"
+              alt="ミニゲーム"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h3 class="gallery-item-title">
+                <i
+                  class="fas fa-vr-cardboard"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i
+                >ミニゲーム
+              </h3>
+              <p class="gallery-item-description">
+                モダンなJavaScriptを活用してブラウザ上で動作する3Dミニゲームを開発。直感的な操作性とインタラクティブな仕掛け、遊び心のあるデザインにこだわっています。
+              </p>
+              <a href="game.html" class="gallery-item-link"
+                >作品一覧を見る <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム6：Webデザイン -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=Web+Design"
+              alt="Webデザイン作品"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h3 class="gallery-item-title">
+                <i
+                  class="fas fa-paint-brush"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i>
+                Webデザイン
+              </h3>
+              <p class="gallery-item-description">
+                企業サイトやポートフォリオ、プロダクトLPなど、多様なWebデザイン案件に携わっています。HTML/CSSはもちろん、近年はレスポンシブやアクセシビリティにもこだわり、洗練されたUI/UXを実現しています。
+              </p>
+              <a href="hp.html" class="gallery-item-link">
+                作品一覧を見る <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム7 -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=iOS+App"
+              alt="iOSアプリ"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h3 class="gallery-item-title">
+                <i
+                  class="fab fa-apple"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i
+                >iOSアプリ
+              </h3>
+              <p class="gallery-item-description">
+                SwiftとSwiftUIを使用して開発したiOSアプリです。Appleのデザインガイドラインに基づき、直感的な操作性とモダンなUIを実現しました。
+              </p>
+              <a href="ios.html" class="gallery-item-link"
+                >作品一覧を見る <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- ギャラリーアイテム8：システム開発 -->
+          <div class="gallery-item">
+            <img
+              src="https://placehold.co/600x400/1a2980/26d0ce?text=System+Dev"
+              alt="システム開発"
+              width="600"
+              height="400"
+            />
+            <div class="gallery-item-content">
+              <h3 class="gallery-item-title">
+                <i
+                  class="fas fa-cogs"
+                  style="margin-right: 8px; color: #26d0ce"
+                ></i
+                >システム開発
+              </h3>
+              <p class="gallery-item-description">
+                様々なビジネス要件に対応したWebシステムや業務システムの開発を行っています。要件定義から設計、実装、テスト、運用保守まで一貫して対応可能です。セキュリティやパフォーマンスにも配慮し、信頼性の高いシステム構築を目指しています。
+              </p>
+              <a href="system.html" class="gallery-item-link"
+                >作品一覧を見る <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 浮遊する泡エフェクト -->
+    <div class="floating-bubbles">
+      <div class="bubble" style="left: 10%; width: 80px; height: 80px"></div>
+      <div
+        class="bubble"
+        style="left: 20%; width: 40px; height: 40px; animation-delay: 2s"
+      ></div>
+      <div
+        class="bubble"
+        style="left: 35%; width: 60px; height: 60px; animation-delay: 4s"
+      ></div>
+      <div
+        class="bubble"
+        style="left: 50%; width: 30px; height: 30px; animation-delay: 1s"
+      ></div>
+      <div
+        class="bubble"
+        style="left: 65%; width: 70px; height: 70px; animation-delay: 3s"
+      ></div>
+      <div
+        class="bubble"
+        style="left: 80%; width: 50px; height: 50px; animation-delay: 5s"
+      ></div>
+      <div
+        class="bubble"
+        style="left: 90%; width: 35px; height: 35px; animation-delay: 2.5s"
+      ></div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".menu-icon")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>
